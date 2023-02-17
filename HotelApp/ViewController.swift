@@ -41,6 +41,10 @@ class ViewController: UIViewController {
             guard let vc else { return }
         
             self.navigationController?.pushViewController(vc, animated: true)
+            
+            emailTextField.text = ""
+            passwordTextField.text = ""
+            
         } else {
             showAlert()
         }
@@ -55,6 +59,7 @@ class ViewController: UIViewController {
         
         present(alert, animated: true)
     }
+    
     
 }
 
