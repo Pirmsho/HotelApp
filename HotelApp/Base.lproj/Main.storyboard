@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -89,6 +90,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="baseBackgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="goToRegisterAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VT8-8a-0Zb"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -224,6 +228,9 @@
                                     <color key="baseForegroundColor" systemColor="tintColor"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="bookCleanupAction:" destination="fmX-d9-d7d" eventType="touchUpInside" id="csL-OD-TxZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RG9-fG-DMX"/>
@@ -249,12 +256,132 @@
             </objects>
             <point key="canvasLocation" x="861.83206106870227" y="-2.1126760563380285"/>
         </scene>
+        <!--Register View Controller-->
+        <scene sceneID="CEX-Ym-Kxt">
+            <objects>
+                <viewController storyboardIdentifier="RegisterViewController" id="C07-7O-fk0" customClass="RegisterViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BRf-2q-dLJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register now to use our services!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbW-mT-kKN">
+                                <rect key="frame" x="40" y="89" width="313" height="26.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="XFZ-o9-ue1">
+                                <rect key="frame" x="40" y="165.33333333333337" width="313" height="202"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nho-yc-cnZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ndp-HE-fwE">
+                                        <rect key="frame" x="0.0" y="84" width="313" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repeat Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKf-Kg-w0V">
+                                        <rect key="frame" x="0.0" y="167.99999999999997" width="313" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ndp-HE-fwE" secondAttribute="trailing" id="60D-hS-cqx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nho-yc-cnZ" secondAttribute="trailing" id="XKq-dU-TYs"/>
+                                    <constraint firstAttribute="trailing" secondItem="sKf-Kg-w0V" secondAttribute="trailing" id="Z85-ld-TBK"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB5-de-VOK">
+                                <rect key="frame" x="80" y="437.33333333333331" width="233" height="34.333333333333314"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Register">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JFs-rs-BHC"/>
+                        <color key="backgroundColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="JFs-rs-BHC" firstAttribute="trailing" secondItem="XFZ-o9-ue1" secondAttribute="trailing" constant="40" id="4hy-at-oTQ"/>
+                            <constraint firstItem="jB5-de-VOK" firstAttribute="leading" secondItem="JFs-rs-BHC" secondAttribute="leading" constant="80" id="50h-Qd-EAI"/>
+                            <constraint firstItem="JFs-rs-BHC" firstAttribute="trailing" secondItem="jB5-de-VOK" secondAttribute="trailing" constant="80" id="5Ek-2U-CTH"/>
+                            <constraint firstItem="XFZ-o9-ue1" firstAttribute="leading" secondItem="JFs-rs-BHC" secondAttribute="leading" constant="40" id="L1R-JG-Zqx"/>
+                            <constraint firstItem="dbW-mT-kKN" firstAttribute="top" secondItem="JFs-rs-BHC" secondAttribute="top" constant="30" id="Pap-hB-fwG"/>
+                            <constraint firstItem="XFZ-o9-ue1" firstAttribute="top" secondItem="dbW-mT-kKN" secondAttribute="bottom" constant="50" id="WHd-4E-8X8"/>
+                            <constraint firstItem="JFs-rs-BHC" firstAttribute="trailing" secondItem="dbW-mT-kKN" secondAttribute="trailing" constant="40" id="g3d-sF-7bA"/>
+                            <constraint firstItem="dbW-mT-kKN" firstAttribute="leading" secondItem="JFs-rs-BHC" secondAttribute="leading" constant="40" id="hJy-Cq-fp2"/>
+                            <constraint firstItem="jB5-de-VOK" firstAttribute="top" secondItem="XFZ-o9-ue1" secondAttribute="bottom" constant="70" id="lni-UO-RNf"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJr-Uf-10C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="83" y="692"/>
+        </scene>
+        <!--Booking View Controller-->
+        <scene sceneID="n3r-ex-wF2">
+            <objects>
+                <viewController storyboardIdentifier="BookingViewController" id="T6u-52-lPh" customClass="BookingViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ABy-cj-I0F">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please choose date and time for your cleanup!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eox-30-h58">
+                                <rect key="frame" x="40" y="109.00000000000001" width="313" height="52.666666666666671"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-ds-reV">
+                                <rect key="frame" x="50" y="261.66666666666669" width="273" height="34.333333333333314"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="698756400">
+                                    <!--2023-02-22 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="699188400">
+                                    <!--2023-02-27 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="184-uZ-fBW">
+                                <rect key="frame" x="80" y="396" width="233" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Book Cleanup Time">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y9O-2p-mxN"/>
+                        <color key="backgroundColor" systemColor="linkColor"/>
+                        <constraints>
+                            <constraint firstItem="184-uZ-fBW" firstAttribute="leading" secondItem="y9O-2p-mxN" secondAttribute="leading" constant="80" id="2eQ-Br-AMX"/>
+                            <constraint firstItem="eox-30-h58" firstAttribute="leading" secondItem="y9O-2p-mxN" secondAttribute="leading" constant="40" id="7a9-iY-jIM"/>
+                            <constraint firstItem="y9O-2p-mxN" firstAttribute="trailing" secondItem="tV6-ds-reV" secondAttribute="trailing" constant="70" id="CPD-7e-bCo"/>
+                            <constraint firstItem="y9O-2p-mxN" firstAttribute="trailing" secondItem="eox-30-h58" secondAttribute="trailing" constant="40" id="Ije-EB-8re"/>
+                            <constraint firstItem="tV6-ds-reV" firstAttribute="leading" secondItem="y9O-2p-mxN" secondAttribute="leading" constant="50" id="IrB-x2-D2A"/>
+                            <constraint firstItem="184-uZ-fBW" firstAttribute="top" secondItem="tV6-ds-reV" secondAttribute="bottom" constant="100" id="JaT-pr-jas"/>
+                            <constraint firstItem="tV6-ds-reV" firstAttribute="top" secondItem="eox-30-h58" secondAttribute="bottom" constant="100" id="Krj-BN-5hs"/>
+                            <constraint firstItem="eox-30-h58" firstAttribute="top" secondItem="y9O-2p-mxN" secondAttribute="top" constant="50" id="m9u-F7-iJu"/>
+                            <constraint firstItem="y9O-2p-mxN" firstAttribute="trailing" secondItem="184-uZ-fBW" secondAttribute="trailing" constant="80" id="vXZ-mb-a5q"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PPk-dL-KBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1670.9923664122136" y="-2.1126760563380285"/>
+        </scene>
     </scenes>
     <resources>
         <image name="EntryImage" width="306" height="204"/>
         <image name="building.2.fill" catalog="system" width="128" height="108"/>
         <image name="key.fill" catalog="system" width="82" height="128"/>
         <image name="person.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

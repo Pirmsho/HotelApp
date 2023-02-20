@@ -50,6 +50,16 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func goToRegisterAction(_ sender: Any) {
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "RegisterViewController") as? RegisterViewController
+        
+        guard let vc else { return }
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     func showAlert() {
         let alert = UIAlertController(title: "Something went wrong", message: "Looks like your login details are either empty or wrong. Please try again", preferredStyle: .alert)
         
