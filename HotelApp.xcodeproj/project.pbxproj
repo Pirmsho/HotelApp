@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		93287AC3299EA318005A13CE /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93287AC2299EA318005A13CE /* UserViewController.swift */; };
+		93402A4029A4FDAD00C51FAD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93402A3F29A4FDAD00C51FAD /* Utils.swift */; };
 		9368952329A396F100EE5F30 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368952229A396F100EE5F30 /* RegisterViewController.swift */; };
 		9368952529A39A6D00EE5F30 /* BookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9368952429A39A6D00EE5F30 /* BookingViewController.swift */; };
 		937C845F299BC5CC00995605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 937C845E299BC5CC00995605 /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		93287AC2299EA318005A13CE /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		93402A3F29A4FDAD00C51FAD /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9368952229A396F100EE5F30 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		9368952429A39A6D00EE5F30 /* BookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingViewController.swift; sourceTree = "<group>"; };
 		937C845B299BC5CC00995605 /* HotelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				93287AC2299EA318005A13CE /* UserViewController.swift */,
 				9368952229A396F100EE5F30 /* RegisterViewController.swift */,
 				9368952429A39A6D00EE5F30 /* BookingViewController.swift */,
+				93402A3F29A4FDAD00C51FAD /* Utils.swift */,
 			);
 			path = HotelApp;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				937C8463299BC5CC00995605 /* ViewController.swift in Sources */,
 				9368952329A396F100EE5F30 /* RegisterViewController.swift in Sources */,
 				93287AC3299EA318005A13CE /* UserViewController.swift in Sources */,
+				93402A4029A4FDAD00C51FAD /* Utils.swift in Sources */,
 				937C845F299BC5CC00995605 /* AppDelegate.swift in Sources */,
 				9368952529A39A6D00EE5F30 /* BookingViewController.swift in Sources */,
 				937C8461299BC5CC00995605 /* SceneDelegate.swift in Sources */,

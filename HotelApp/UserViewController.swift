@@ -11,8 +11,6 @@ class UserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     @IBAction func bookCleanupAction(_ sender: Any) {
@@ -21,6 +19,7 @@ class UserViewController: UIViewController {
         guard let vc else { return }
         
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
 

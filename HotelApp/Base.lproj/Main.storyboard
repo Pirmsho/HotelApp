@@ -325,7 +325,7 @@
         <!--Booking View Controller-->
         <scene sceneID="n3r-ex-wF2">
             <objects>
-                <viewController storyboardIdentifier="BookingViewController" id="T6u-52-lPh" customClass="BookingViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="T6u-52-lPh" customClass="BookingViewController" customModule="HotelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ABy-cj-I0F">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,17 +336,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-ds-reV">
-                                <rect key="frame" x="50" y="261.66666666666669" width="273" height="34.333333333333314"/>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="698756400">
-                                    <!--2023-02-22 11:00:00 +0000-->
-                                </date>
-                                <date key="maximumDate" timeIntervalSinceReferenceDate="699188400">
-                                    <!--2023-02-27 11:00:00 +0000-->
-                                </date>
+                            <datePicker contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="tV6-ds-reV">
+                                <rect key="frame" x="50" y="261.66666666666669" width="273" height="216"/>
+                                <connections>
+                                    <action selector="datePickerChanged:" destination="T6u-52-lPh" eventType="valueChanged" id="wvC-Ky-rYz"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="184-uZ-fBW">
-                                <rect key="frame" x="80" y="396" width="233" height="35"/>
+                                <rect key="frame" x="80" y="577.66666666666663" width="233" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Book Cleanup Time">
                                     <color key="baseForegroundColor" name="AccentColor"/>
@@ -368,6 +365,10 @@
                             <constraint firstItem="y9O-2p-mxN" firstAttribute="trailing" secondItem="184-uZ-fBW" secondAttribute="trailing" constant="80" id="vXZ-mb-a5q"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="tV6-ds-reV" id="EYV-gD-GiG"/>
+                        <outlet property="topLabel" destination="eox-30-h58" id="455-IU-Yt3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPk-dL-KBf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
