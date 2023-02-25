@@ -13,10 +13,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var delegate: [[String: String]] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         style()
         animateFade()
+        NotificationCenter.default.addObserver(self, selector: #selector(applyCleanup), name: Notification.Name("Cleanup"), object: nil)
+    }
+    
+    @objc func applyCleanup(notification: NSNotification) {
+        
+        guard let info = notification.userInfo as? [String: String] else { return }
+        
+        self.delegate.append(info)
+        
+                
     }
     
     func style() {
@@ -45,7 +57,20 @@ class ViewController: UIViewController {
             emailTextField.text = ""
             passwordTextField.text = ""
             
-        } else {
+        } else if emailTextField.text == "bakuradze@gmail.com" && passwordTextField.text == "12345" {
+            
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "EmployeeViewController") as? EmployeeViewController
+            
+            guard let vc else { return }
+            
+            vc.delegate = self.delegate
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+            
+            emailTextField.text = ""
+            passwordTextField.text = ""
+        }
+        else {
             showAlert()
         }
     }

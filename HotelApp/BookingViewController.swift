@@ -7,7 +7,7 @@
 
 import UIKit
 
-let cleanup = Cleanup()
+
 
 class BookingViewController: UIViewController {
     
@@ -20,13 +20,11 @@ class BookingViewController: UIViewController {
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .full
-        dateFormatter.timeStyle = .full
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
         let someDateString = dateFormatter.string(from: sender.date)
         
-        
-        cleanup.getPickedTime(someDateString)
-        topLabel.text = cleanup.cleanUpTime
+        topLabel.text = someDateString
     }
     
     
@@ -36,6 +34,16 @@ class BookingViewController: UIViewController {
     }
     
     
+    @IBAction func bookCleanupBtn(_ sender: UIButton) {
+        
+        guard let topLabel = topLabel.text else { return }
+        
+        let notificationResponse = ["CleanupDate": topLabel, "roomNum": "47"]
+        
+        NotificationCenter.default.post(name: Notification.Name("Cleanup"), object: nil, userInfo: notificationResponse)
+        
+        
+    }
     /*
      
      // MARK: - Navigation
